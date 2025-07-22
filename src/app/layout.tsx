@@ -54,16 +54,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://moocaredes.com.br",
+    url: "https://www.moocaredes.com.br",
     siteName: "Mooca Redes",
     title: "Mooca Redes - Redes de Proteção em São Paulo | Instalação 24h",
     description:
       "Redes de proteção para janelas, sacadas e pets em São Paulo e ABC. Instalação em 24h, 5 anos de garantia, material certificado INMETRO. Orçamento grátis!",
     images: [
       {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/logo.png",
+        width: 400,
+        height: 400,
         alt: "Mooca Redes - Redes de Proteção em São Paulo",
       },
       {
@@ -79,11 +79,11 @@ export const metadata: Metadata = {
     title: "Mooca Redes - Redes de Proteção em São Paulo",
     description:
       "Redes de proteção com instalação em 24h e 5 anos de garantia. Atendemos São Paulo e ABC. Orçamento grátis!",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/logo.png"],
     creator: "@moocaredes",
   },
   alternates: {
-    canonical: "https://moocaredes.com.br",
+    canonical: "https://www.moocaredes.com.br",
   },
   other: {
     "geo.region": "BR-SP",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     "business:contact_data:postal_code": "03101",
     "business:contact_data:country_name": "Brasil",
     "business:contact_data:phone_number": "+5511963403041",
-    "business:contact_data:website": "https://moocaredes.com.br",
+    "business:contact_data:website": "https://www.moocaredes.com.br",
   },
 }
 
@@ -105,7 +105,7 @@ const structuredData = {
   "@type": "LocalBusiness",
   name: "Mooca Redes",
   description: "Empresa especializada em redes de proteção para janelas, sacadas e pets em São Paulo e ABC Paulista",
-  url: "https://moocaredes.com.br",
+  url: "https://www.moocaredes.com.br/",
   telephone: "+5511963403041",
   address: {
     "@type": "PostalAddress",
@@ -139,8 +139,8 @@ const structuredData = {
     "Rio Grande da Serra",
   ],
   priceRange: "$$",
-  image: "https://moocaredes.com.br/images/logo.png",
-  logo: "https://moocaredes.com.br/images/logo.png",
+  image: "https://www.moocaredes.com.br/images/logo.png",
+  logo: "https://www.moocaredes.com.br/images/logo.png",
   sameAs: ["https://wa.me/5511963403041"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",

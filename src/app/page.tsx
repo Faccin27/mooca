@@ -1,3 +1,4 @@
+import ComparisonSection from "@/components/comparison-section";
 import HeroCarousel from "@/components/hero-carousel";
 import InteractiveGallery from "@/components/interactive-gallery";
 import ModernHeader from "@/components/modern-header";
@@ -13,6 +14,7 @@ export default function Home() {
         <ProcessSection />
         <InteractiveGallery />
         <TestimonialsSection />
+        <ComparisonSection />
       </main>
     </div>
   );

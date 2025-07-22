@@ -1,4 +1,5 @@
 import HeroCarousel from "@/components/hero-carousel";
+import InteractiveGallery from "@/components/interactive-gallery";
 import ModernHeader from "@/components/modern-header";
 import ProcessSection from "@/components/process-section";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <main className="flex-grow">
         <HeroCarousel />
         <ProcessSection />
+        <InteractiveGallery />
       </main>
     </div>
   );

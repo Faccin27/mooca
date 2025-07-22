@@ -2,6 +2,7 @@ import HeroCarousel from "@/components/hero-carousel";
 import InteractiveGallery from "@/components/interactive-gallery";
 import ModernHeader from "@/components/modern-header";
 import ProcessSection from "@/components/process-section";
+import TestimonialsSection from "@/components/testimonials-section";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <HeroCarousel />
         <ProcessSection />
         <InteractiveGallery />
+        <TestimonialsSection />
       </main>
     </div>
   );

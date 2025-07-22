@@ -1,4 +1,5 @@
 import ComparisonSection from "@/components/comparison-section";
+import ContactSection from "@/components/contact-section";
 import FAQSection from "@/components/faq-section";
 import HeroCarousel from "@/components/hero-carousel";
 import InteractiveGallery from "@/components/interactive-gallery";
@@ -17,6 +18,7 @@ export default function Home() {
         <TestimonialsSection />
         <ComparisonSection />
         <FAQSection />
+        <ContactSection />
       </main>
     </div>
   );

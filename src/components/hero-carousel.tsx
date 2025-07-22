@@ -60,7 +60,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative  h-[80dvh] overflow-hidden" id="inicio">
+    <section className="relative h-[100dvh] overflow-hidden" id="inicio">
       {/* Carousel Images */}
       <div className="absolute inset-0">
         {heroSlides.map((slide, index) => (

@@ -11,7 +11,7 @@ export default function ModernHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+    <header className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
         <div className="hidden md:flex items-center justify-between py-2 text-sm border-b border-gray-100">

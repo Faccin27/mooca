@@ -16,7 +16,9 @@ const contactMethods = [
     title: "WhatsApp",
     info: "(11) 96340-3041",
     description: "Resposta imediata",
-    action: `https://wa.me/5511963403041?text=${encodeURIComponent("Encontrei você pelo site e estou entrando em contato para solicitar uma cotação")}`,
+    action: `https://wa.me/5511963403041?text=${encodeURIComponent(
+      "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+    )}`,
     color: "from-[#10b981] to-[#059669]",
   },
   {
@@ -42,9 +44,8 @@ const serviceAreas = [
 
 export default function ContactSection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-[#111827] via-[#552020] to-[#111827] text-white relative overflow-hidden">
+    <section className="pt-24 pb-12 bg-gradient-to-br from-[#111827] via-[#552020] to-[#111827] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/images/protecao-header.jpg')] bg-cover bg-center opacity-10"></div>
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-[#d1d5db] bg-clip-text text-transparent">
@@ -54,7 +55,6 @@ export default function ContactSection() {
             Estamos prontos para atender você e garantir a segurança da sua família
           </p>
         </div>
-
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div className="grid gap-6">
@@ -80,7 +80,6 @@ export default function ContactSection() {
                 </a>
               ))}
             </div>
-
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <div className="flex items-center mb-4">
                 <Clock className="w-6 h-6 text-[#C4A484] mr-3" />
@@ -93,14 +92,12 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-
           <div className="space-y-8">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
               <div className="flex items-center mb-6">
                 <MapPin className="w-6 h-6 text-[#C4A484] mr-3" />
                 <h3 className="text-2xl font-bold">Áreas de Atendimento</h3>
               </div>
-
               <div className="grid grid-cols-2 gap-3 mb-8">
                 {serviceAreas.map((area, index) => (
                   <div key={index} className="flex items-center">
@@ -109,7 +106,6 @@ export default function ContactSection() {
                   </div>
                 ))}
               </div>
-
               <div className="text-center">
                 <Link
                   href={`https://wa.me/5511963403041?text=${encodeURIComponent(
@@ -121,7 +117,6 @@ export default function ContactSection() {
                 </Link>
               </div>
             </div>
-
             <div className="bg-gradient-to-r from-[#C4A484]/20 to-[#C4A484]/10 rounded-2xl p-8 border border-[#C4A484]/30">
               <h3 className="text-2xl font-bold mb-4 text-center">Orçamento Gratuito</h3>
               <ul className="space-y-3 text-[#d1d5db]">
@@ -144,6 +139,23 @@ export default function ContactSection() {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Footer movido para dentro da div com z-10 */}
+        <div className="justify-center text-center mt-12">
+          <p className="text-gray-400">
+            © 2025 Site desenvolvido pela
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:opacity-80 font-medium"
+              href="https://gwapo-two.vercel.app/"
+            >
+              {" "}
+              GWAPO
+            </Link>
+            . Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </section>

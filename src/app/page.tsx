@@ -1,5 +1,6 @@
 import HeroCarousel from "@/components/hero-carousel";
 import ModernHeader from "@/components/modern-header";
+import ProcessSection from "@/components/process-section";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <ModernHeader />
       <main className="flex-grow">
         <HeroCarousel />
+        <ProcessSection />
       </main>
     </div>
   );

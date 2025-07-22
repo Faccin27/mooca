@@ -119,7 +119,7 @@ export default function HeroCarousel() {
                     "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
                   )}`}
                   target="_blank"
-                  className="btn-whatsapp lg:h-14 lg:w-auto mb-6 lg:text-lg "
+                  className="btn-whatsapp lg:h-14 lg:w-auto  lg:text-lg "
                 >
                   Solicitar orçamento
                 </Link>
@@ -128,7 +128,7 @@ export default function HeroCarousel() {
                     "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
                   )}`}
                   target="_blank"
-                  className="btn-whatsapp lg:h-14 lg:w-auto mb-6 lg:text-lg "
+                  className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg "
                 >
                   Veja mais
                 </Link>

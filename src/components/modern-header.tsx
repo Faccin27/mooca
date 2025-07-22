@@ -1,6 +1,5 @@
 "use client"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, Menu, X, Shield, MapPin, Clock } from "lucide-react"
@@ -9,12 +8,40 @@ import WhatsappButton from "@/components/ui/WhatsappButton"
 
 export default function ModernHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isTopBarVisible, setIsTopBarVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > 50 && currentScrollY > lastScrollY) {
+        setIsTopBarVisible(false)
+      } else if (currentScrollY < lastScrollY) {
+        setIsTopBarVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [lastScrollY])
 
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100">
+    <header className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100 transition-all duration-500">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
-        <div className="hidden md:flex items-center justify-between py-2 text-sm border-b border-gray-100">
+        <div
+          className={`hidden md:flex items-center justify-between py-2 text-sm border-b border-gray-100 transition-all duration-1000 ease-in-out overflow-hidden ${
+            isTopBarVisible
+              ? "transform translate-y-0 opacity-100 max-h-16"
+              : "transform -translate-y-full opacity-0 max-h-0 py-0"
+          }`}
+        >
           <div className="flex items-center space-x-6 text-gray-600">
             <div className="flex items-center">
               <Clock className="w-4 h-4 mr-2 text-primary" />
@@ -41,15 +68,10 @@ export default function ModernHeader() {
         </div>
 
         {/* Main Header */}
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-1">
           <div className="flex items-center">
             <div className="relative w-12 h-12 mr-3">
-              <Image
-                src="/images/logo.png"
-                alt="Mooca Redes Logo"
-                fill
-                className="object-contain"
-              />
+              <Image src="/images/logo.png" alt="Mooca Redes Logo" fill className="object-contain" />
             </div>
             <div>
               <h1 className="text-xl md:text-2xl font-bold text-gray-800">Mooca Redes</h1>

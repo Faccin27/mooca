@@ -6,6 +6,7 @@ import InteractiveGallery from "@/components/interactive-gallery";
 import ModernHeader from "@/components/modern-header";
 import ProcessSection from "@/components/process-section";
 import TestimonialsSection from "@/components/testimonials-section";
+import FloatingWhatsappIcon from "@/components/ui/IconWhatsAppButton";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <ComparisonSection />
         <FAQSection />
         <ContactSection />
+        <FloatingWhatsappIcon />
       </main>
     </div>
   );

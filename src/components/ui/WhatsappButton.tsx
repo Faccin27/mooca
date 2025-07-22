@@ -29,7 +29,7 @@ export default function WhatsappButton({ label }: WhatsappButtonProps) {
   }
 
   return (
-    <Button onClick={handleClick} size="lg" className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg min-w-[280px]">
+    <Button onClick={handleClick} size="lg" className="btn-whatsapp cursor-pointer lg:h-14 lg:w-auto lg:text-lg min-w-[280px]">
       {label}
     </Button>
   )

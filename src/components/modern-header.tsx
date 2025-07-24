@@ -101,11 +101,11 @@ export default function ModernHeader() {
               Início
             </Link>
             <Link
-              href="#servicos"
+              href="#projetos"
               className="text-gray-700 hover:text-primary transition-colors font-medium"
-              onClick={(e) => handleNavLinkClick(e, "#servicos")}
+              onClick={(e) => handleNavLinkClick(e, "#projetos")}
             >
-              Serviços
+              Projetos
             </Link>
             <Link
               href="#sobre"
@@ -156,11 +156,11 @@ export default function ModernHeader() {
                 Início
               </Link>
               <Link
-                href="#servicos"
+                href="#projetos"
                 className="text-gray-700 hover:text-primary transition-colors font-medium py-2"
-                onClick={(e) => handleNavLinkClick(e, "#servicos")}
+                onClick={(e) => handleNavLinkClick(e, "#projetos")}
               >
-                Serviços
+                Projetos
               </Link>
               <Link
                 href="#sobre"

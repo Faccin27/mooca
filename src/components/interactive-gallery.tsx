@@ -58,7 +58,7 @@ export default function InteractiveGallery() {
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white" id="projetos">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#552020] to-[#552020]/70 bg-clip-text text-transparent">

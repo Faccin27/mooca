@@ -23,7 +23,7 @@ const competitors = [
 
 export default function ComparisonSection({ id }: { id?: string }) {
   return (
-    <section id={id} className="py-24 bg-gradient-to-br from-[#f8fafc] to-white">
+    <section id='sobre' className="py-24 bg-gradient-to-br from-[#f8fafc] to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#552020] to-[#552020]/70 bg-clip-text text-transparent">

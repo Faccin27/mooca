@@ -1,5 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
+import type React from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, Menu, X, Shield, MapPin, Clock } from "lucide-react"
@@ -30,6 +32,16 @@ export default function ModernHeader() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [lastScrollY])
+
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const targetId = href.substring(1) // Remove the '#'
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" })
+      setIsMenuOpen(false) // Close mobile menu after clicking
+    }
+  }
 
   return (
     <header className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100 transition-all duration-500">
@@ -81,18 +93,34 @@ export default function ModernHeader() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#inicio" className="text-gray-700 hover:text-primary transition-colors font-medium">
+            <Link
+              href="#inicio"
+              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              onClick={(e) => handleNavLinkClick(e, "#inicio")}
+            >
               Início
-            </a>
-            <a href="#servicos" className="text-gray-700 hover:text-primary transition-colors font-medium">
+            </Link>
+            <Link
+              href="#servicos"
+              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              onClick={(e) => handleNavLinkClick(e, "#servicos")}
+            >
               Serviços
-            </a>
-            <a href="#sobre" className="text-gray-700 hover:text-primary transition-colors font-medium">
+            </Link>
+            <Link
+              href="#sobre"
+              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              onClick={(e) => handleNavLinkClick(e, "#sobre")}
+            >
               Sobre
-            </a>
-            <a href="#contato" className="text-gray-700 hover:text-primary transition-colors font-medium">
+            </Link>
+            <Link
+              href="#contato"
+              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              onClick={(e) => handleNavLinkClick(e, "#contato")}
+            >
               Contato
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -120,34 +148,34 @@ export default function ModernHeader() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-100">
             <nav className="flex flex-col space-y-4">
-              <a
+              <Link
                 href="#inicio"
                 className="text-gray-700 hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavLinkClick(e, "#inicio")}
               >
                 Início
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#servicos"
                 className="text-gray-700 hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavLinkClick(e, "#servicos")}
               >
                 Serviços
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#sobre"
                 className="text-gray-700 hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavLinkClick(e, "#sobre")}
               >
                 Sobre
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#contato"
                 className="text-gray-700 hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavLinkClick(e, "#contato")}
               >
                 Contato
-              </a>
+              </Link>
               <div className="pt-4 mx-auto">
                 <Link
                   href={`https://wa.me/5511963403041?text=${encodeURIComponent(

@@ -44,7 +44,7 @@ const serviceAreas = [
 
 export default function ContactSection() {
   return (
-    <section className="pt-24 pb-12 bg-gradient-to-br from-[#111827] via-[#552020] to-[#111827] text-white relative overflow-hidden">
+    <section className="pt-24 pb-12 bg-gradient-to-br from-[#111827] via-[#552020] to-[#111827] text-white relative overflow-hidden" id="contato">
       <div className="absolute inset-0 bg-[url('/images/protecao-header.jpg')] bg-cover bg-center opacity-10"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

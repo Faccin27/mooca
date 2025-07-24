@@ -20,7 +20,7 @@ const projects = [
     category: "externo",
     title: "Proteção para Área Externa",
     location: "Vila Madalena - SP",
-  }, // Changed category to "externo"
+  }, 
   { id: 4, image: "/images/janela2.png", category: "janelas", title: "Janela Residencial", location: "Perdizes - SP" },
   { id: 5, image: "/images/sacada2.png", category: "sacadas", title: "Sacada com Vista", location: "Morumbi - SP" },
   { id: 6, image: "/images/varanda.png", category: "sacadas", title: "Varanda Gourmet", location: "Itaim Bibi - SP" },

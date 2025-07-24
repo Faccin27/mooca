@@ -79,12 +79,14 @@ export default function HeroCarousel() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl">
             <div className="mb-8">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                {" "}
+              <h1
+                className="text-4xl md:text-6xl mb-6 font-bold text-white leading-tight"
+                style={{ lineHeight: "60px" }}
+              >
                 {/* Adjusted md:text-6xl */}
                 <span className="text-white">{heroSlides[currentSlide].title}</span>
                 <br />
-                <span className="bg-gradient-to-r from-[#C4A484] to-[#C4A484]/80 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C4A484] to-[#C4A484]/80 bg-clip-text text-transparent text">
                   {heroSlides[currentSlide].subtitle}
                 </span>
               </h1>

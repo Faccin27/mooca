@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
@@ -44,14 +44,14 @@ const faqs = [
     answer:
       "Absolutamente! Nossas redes são especialmente projetadas para proteger pets, impedindo quedas e fugas sem causar ferimentos.",
   },
-]
+];
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className="py-24 bg-gradient-to-br from-[#552020]/5 to-white">
@@ -60,7 +60,9 @@ export default function FAQSection() {
           <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-[#552020] to-[#552020]/70 bg-clip-text text-transparent leading-tight">
             Perguntas Frequentes
           </h2>
-          <p className="text-xl text-[#64748b] max-w-3xl mx-auto">Tire suas dúvidas sobre nossos serviços e produtos</p>
+          <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
+            Tire suas dúvidas sobre nossos serviços e produtos
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -77,7 +79,11 @@ export default function FAQSection() {
                   <h3 className="text-lg font-semibold text-[#1e293b] pr-4 leading-relaxed group-hover:text-[#552020] transition-colors duration-300">
                     {faq.question}
                   </h3>
-                  <div className={`transition-all duration-300 ${openIndex === index ? "rotate-180" : "rotate-0"}`}>
+                  <div
+                    className={`transition-all duration-300 ${
+                      openIndex === index ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
                     {openIndex === index ? (
                       <ChevronUp className="w-6 h-6 text-[#552020] flex-shrink-0" />
                     ) : (
@@ -88,12 +94,16 @@ export default function FAQSection() {
 
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    openIndex === index
+                      ? "max-h-96 opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="px-8 pb-6">
                     <div className="pt-2 border-t border-[#f1f5f9]">
-                      <p className="text-[#64748b] leading-relaxed animate-fade-in">{faq.answer}</p>
+                      <p className="text-[#64748b] leading-relaxed animate-fade-in">
+                        {faq.answer}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -105,7 +115,7 @@ export default function FAQSection() {
             <p className="text-[#64748b] mb-6">Não encontrou sua pergunta?</p>
             <a
               href={`https://wa.me/5511963403041?text=${encodeURIComponent(
-                "Tenho uma dúvida sobre redes de proteção",
+                "Tenho uma dúvida sobre redes de proteção"
               )}`}
               target="_blank"
               className="btn-whatsapp inline-block transform hover:scale-105 transition-all duration-300"
@@ -128,11 +138,11 @@ export default function FAQSection() {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 0.4s ease-out;
         }
       `}</style>
     </section>
-  )
+  );
 }

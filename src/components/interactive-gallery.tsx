@@ -2,24 +2,36 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight } from "lucide-react"
 
 const categories = [
   { id: "all", name: "Todos", count: 8 },
   { id: "janelas", name: "Janelas", count: 4 },
   { id: "sacadas", name: "Sacadas", count: 3 },
-  { id: "pets", name: "Pets", count: 1 },
+  { id: "externo", name: "Externo", count: 1 }, // Changed from "pets" to "externo"
 ]
 
 const projects = [
   { id: 1, image: "/images/janela.png", category: "janelas", title: "Proteção para Janela", location: "Mooca - SP" },
   { id: 2, image: "/images/sacada.png", category: "sacadas", title: "Rede para Sacada", location: "Tatuapé - SP" },
-  { id: 3, image: "/images/gato.png", category: "pets", title: "Proteção para Pets", location: "Vila Madalena - SP" },
+  {
+    id: 3,
+    image: "/images/gato.png",
+    category: "externo",
+    title: "Proteção para Área Externa",
+    location: "Vila Madalena - SP",
+  }, // Changed category to "externo"
   { id: 4, image: "/images/janela2.png", category: "janelas", title: "Janela Residencial", location: "Perdizes - SP" },
   { id: 5, image: "/images/sacada2.png", category: "sacadas", title: "Sacada com Vista", location: "Morumbi - SP" },
   { id: 6, image: "/images/varanda.png", category: "sacadas", title: "Varanda Gourmet", location: "Itaim Bibi - SP" },
   { id: 7, image: "/images/quarto.png", category: "janelas", title: "Quarto Infantil", location: "Vila Alpina - SP" },
-  { id: 8, image: "/images/teste.png", category: "janelas", title: "Segurança na sua Janela", location: "Santo André - SP" },
+  {
+    id: 8,
+    image: "/images/teste.png",
+    category: "janelas",
+    title: "Segurança na sua Janela",
+    location: "Santo André - SP",
+  },
 ]
 
 export default function InteractiveGallery() {

@@ -82,8 +82,8 @@ export default function ModernHeader() {
         {/* Main Header */}
         <div className="flex items-center justify-between py-1">
           <div className="flex items-center">
-            <div className="relative w-12 h-12 mr-3">
-              <Image src="/images/logo.png" alt="Mooca Redes Logo" fill className="object-contain" />
+            <div className="relative w-20 h-20">
+              <Image src="/images/logo-h.png" alt="Mooca Redes Logo" fill className="object-cover" />
             </div>
             <div>
               <h1 className="text-xl md:text-2xl font-bold text-gray-800">Mooca Redes</h1>

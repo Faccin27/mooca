@@ -35,11 +35,6 @@ const faqs = [
       "Atendemos toda a região de São Paulo Capital e ABC Paulista, incluindo Mooca, Tatuapé, Vila Madalena, Santo André, São Bernardo e muitas outras.",
   },
   {
-    question: "É possível parcelar o pagamento?",
-    answer:
-      "Sim! Parcelamos em até 12x no cartão de crédito sem juros. Também aceitamos PIX, dinheiro e transferência bancária.",
-  },
-  {
     question: "As redes são seguras para pets?",
     answer:
       "Absolutamente! Nossas redes são especialmente projetadas para proteger pets, impedindo quedas e fugas sem causar ferimentos.",

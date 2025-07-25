@@ -112,15 +112,6 @@ export default function HeroCarousel() {
                 >
                   Solicitar orçamento
                 </Link>
-                <Link
-                  href={`https://wa.me/5511963403041?text=${encodeURIComponent(
-                    "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
-                  )}`}
-                  target="_blank"
-                  className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg "
-                >
-                  Veja mais
-                </Link>
               </div>
             </div>
           </div>

@@ -1,3 +1,5 @@
+"use client"
+
 import { Check, X, Crown } from "lucide-react"
 
 const features = [
@@ -23,7 +25,7 @@ const competitors = [
 
 export default function ComparisonSection({ id }: { id?: string }) {
   return (
-    <section id='sobre' className="py-24 bg-gradient-to-br from-[#f8fafc] to-white">
+    <section id="sobre" className="py-24 bg-gradient-to-br from-[#f8fafc] to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#552020] to-[#552020]/70 bg-clip-text text-transparent">
@@ -63,16 +65,21 @@ export default function ComparisonSection({ id }: { id?: string }) {
             </div>
 
             <div className="mt-8 text-center">
-              <a
-                href={`https://wa.me/5511963403041?text=${encodeURIComponent(
-                  "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
-                )}`}
-                target="_blank"
+              <button
+                onClick={(e) => {
+                  e.preventDefault()
+                  window.open(
+                    `https://wa.me/5511963403041?text=${encodeURIComponent(
+                      "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                    )}`,
+                    "_blank",
+                  )
+                  window.location.href = "/enviar_mensagem"
+                }}
                 className="inline-block bg-[#C4A484] text-[#552020] font-bold px-6 py-3 rounded-lg hover:bg-[#C4A484]/90 transition-colors duration-300"
-                rel="noreferrer"
               >
                 Escolher Mooca Redes
-              </a>
+              </button>
             </div>
           </div>
 

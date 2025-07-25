@@ -5,8 +5,6 @@ import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, Menu, X, Shield, MapPin, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import WhatsappButton from "@/components/ui/WhatsappButton"
 
 export default function ModernHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,7 +46,7 @@ export default function ModernHeader() {
       <div className="container mx-auto px-4">
         {/* Top Bar */}
         <div
-          className={`hidden md:flex items-center justify-between py-2 text-sm border-b border-gray-100 transition-all duration-1000 ease-in-out overflow-hidden ${
+          className={`hidden md:flex items-center justify-between py-2 text-sm border-b border-gray-200 transition-all duration-1000 ease-in-out overflow-hidden ${
             isTopBarVisible
               ? "transform translate-y-0 opacity-100 max-h-16"
               : "transform -translate-y-full opacity-0 max-h-0 py-0"
@@ -125,14 +123,21 @@ export default function ModernHeader() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link
-              href={`https://wa.me/5511963403041?text=${encodeURIComponent(
-                "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
-              )}`}
-              target="_blank"
+            <button
+              onClick={(e) => {
+                e.preventDefault()
+                window.open(
+                  `https://wa.me/5511963403041?text=${encodeURIComponent(
+                    "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                  )}`,
+                  "_blank",
+                )
+                window.location.href = "/enviar_mensagem"
+              }}
+              className="btn-whatsapp text-white"
             >
-              <Button className="btn-whatsapp text-white">Orçamento Grátis</Button>
-            </Link>
+              Orçamento Grátis
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -177,14 +182,21 @@ export default function ModernHeader() {
                 Contato
               </Link>
               <div className="pt-4 mx-auto">
-                <Link
-                  href={`https://wa.me/5511963403041?text=${encodeURIComponent(
-                    "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
-                  )}`}
-                  target="_blank"
+                <button
+                  onClick={(e) => {
+                    e.preventDefault()
+                    window.open(
+                      `https://wa.me/5511963403041?text=${encodeURIComponent(
+                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                      )}`,
+                      "_blank",
+                    )
+                    window.location.href = "/enviar_mensagem"
+                  }}
+                  className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >
-                  <WhatsappButton label="Orçamento Grátis" />
-                </Link>
+                  Orçamento Grátis
+                </button>
               </div>
               <div className="flex items-center justify-center pt-2">
                 <a href="tel:+5511971423779" className="flex items-center text-primary font-semibold">

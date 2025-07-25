@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { ChevronLeft, ChevronRight, CheckCircle } from "lucide-react"
 import type { HeroSlide } from "@/types"
 
@@ -103,15 +102,21 @@ export default function HeroCarousel() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href={`https://wa.me/5511963403041?text=${encodeURIComponent(
-                    "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
-                  )}`}
-                  target="_blank"
-                  className="btn-whatsapp lg:h-14 lg:w-auto  lg:text-lg "
+                <button
+                  onClick={(e) => {
+                    e.preventDefault()
+                    window.open(
+                      `https://wa.me/5511963403041?text=${encodeURIComponent(
+                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                      )}`,
+                      "_blank",
+                    )
+                    window.location.href = "/enviar_mensagem"
+                  }}
+                  className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg"
                 >
                   Solicitar orçamento
-                </Link>
+                </button>
               </div>
             </div>
           </div>

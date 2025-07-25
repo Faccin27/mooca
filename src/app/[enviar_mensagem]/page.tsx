@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
@@ -9,13 +11,13 @@ export default function Home() {
           Recebemos sua mensagem e entraremos em contato em breve.
         </p>
         <div className="mb-8">
-          <a
+          <Link
             href="/"
             className="inline-block w-full text-[#552020] bg-zinc-200  font-bold py-3 px-4 rounded hover:bg-[#700000] hover:text-white
         transition duration-500 mb-4"
           >
             ← Voltar para a página inicial
-          </a>
+          </Link>
         </div>
       </div>
     </div>

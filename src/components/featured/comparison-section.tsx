@@ -1,6 +1,6 @@
 "use client";
 
-import FeatureCard from "./featured/featuredCard";
+import FeatureCard from "./featuredCard";
 
 const features = [true, true, true, true, true, true, true];
 
@@ -37,7 +37,7 @@ export default function ComparisonSection() {
             features={features}
             onClick={() => {
               window.open(
-                `https://wa.me/5511963403041?text=${encodeURIComponent(
+                `https://wa.me/5511971423779?text=${encodeURIComponent(
                   "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
                 )}`,
                 "_blank"

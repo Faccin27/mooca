@@ -1,45 +1,48 @@
-"use client"
-import { useState, useEffect } from "react"
-import type React from "react"
+"use client";
+import type React from "react";
+import { useEffect, useState } from "react";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Phone, Menu, X, Shield, MapPin, Clock } from "lucide-react"
+import { Clock, MapPin, Menu, Phone, Shield, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function ModernHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isTopBarVisible, setIsTopBarVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTopBarVisible, setIsTopBarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       if (currentScrollY > 50 && currentScrollY > lastScrollY) {
-        setIsTopBarVisible(false)
+        setIsTopBarVisible(false);
       } else if (currentScrollY < lastScrollY) {
-        setIsTopBarVisible(true)
+        setIsTopBarVisible(true);
       }
 
-      setLastScrollY(currentScrollY)
-    }
+      setLastScrollY(currentScrollY);
+    };
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [lastScrollY])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
-  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const targetId = href.substring(1) // Remove the '#'
-    const targetElement = document.getElementById(targetId)
+  const handleNavLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.substring(1); // Remove the '#'
+    const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" })
-      setIsMenuOpen(false) // Close mobile menu after clicking
+      targetElement.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close mobile menu after clicking
     }
-  }
+  };
 
   return (
     <header className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100 transition-all duration-500">
@@ -81,11 +84,20 @@ export default function ModernHeader() {
         <div className="flex items-center justify-between py-1">
           <div className="flex items-center">
             <div className="relative w-20 h-20">
-              <Image src="/images/logo-h.png" alt="Mooca Redes Logo" fill className="object-cover" />
+              <Image
+                src="/images/logo-h.png"
+                alt="Mooca Redes Logo"
+                fill
+                className="object-cover"
+              />
             </div>
             <div>
-              <h1 className="text-xl md:text-2xl font-bold text-gray-800">Mooca Redes</h1>
-              <p className="text-sm text-gray-600 hidden md:block">Proteção e Segurança</p>
+              <h1 className="text-xl md:text-2xl font-bold text-gray-800">
+                Mooca Redes
+              </h1>
+              <p className="text-sm text-gray-600 hidden md:block">
+                Proteção e Segurança
+              </p>
             </div>
           </div>
 
@@ -125,14 +137,14 @@ export default function ModernHeader() {
           <div className="hidden md:block">
             <button
               onClick={(e) => {
-                e.preventDefault()
+                e.preventDefault();
                 window.open(
-                  `https://wa.me/5511963403041?text=${encodeURIComponent(
-                    "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                  `https://wa.me/5511971423779?text=${encodeURIComponent(
+                    "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
                   )}`,
-                  "_blank",
-                )
-                window.location.href = "/enviar_mensagem"
+                  "_blank"
+                );
+                window.location.href = "/enviar_mensagem";
               }}
               className="btn-whatsapp text-white"
             >
@@ -145,7 +157,11 @@ export default function ModernHeader() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            {isMenuOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-gray-700" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-700" />
+            )}
           </button>
         </div>
 
@@ -184,14 +200,14 @@ export default function ModernHeader() {
               <div className="pt-4 mx-auto">
                 <button
                   onClick={(e) => {
-                    e.preventDefault()
+                    e.preventDefault();
                     window.open(
-                      `https://wa.me/5511963403041?text=${encodeURIComponent(
-                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                      `https://wa.me/5511971423779?text=${encodeURIComponent(
+                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
                       )}`,
-                      "_blank",
-                    )
-                    window.location.href = "/enviar_mensagem"
+                      "_blank"
+                    );
+                    window.location.href = "/enviar_mensagem";
                   }}
                   className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >
@@ -199,7 +215,10 @@ export default function ModernHeader() {
                 </button>
               </div>
               <div className="flex items-center justify-center pt-2">
-                <a href="tel:+5511971423779" className="flex items-center text-primary font-semibold">
+                <a
+                  href="tel:+5511971423779"
+                  className="flex items-center text-primary font-semibold"
+                >
                   <Phone className="w-4 h-4 mr-2" />
                   (11) 97142-3779
                 </a>
@@ -209,5 +228,5 @@ export default function ModernHeader() {
         )}
       </div>
     </header>
-  )
+  );
 }

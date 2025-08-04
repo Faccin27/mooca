@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { MapPin, Phone, Clock, Mail, MessageCircle } from "lucide-react"
-import Link from "next/link"
+import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Link from "next/link";
 
 const contactMethods = [
   {
@@ -15,10 +15,10 @@ const contactMethods = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    info: "(11) 96340-3041",
+    info: "(11) 97142-3779",
     description: "Resposta imediata",
-    action: `https://wa.me/5511963403041?text=${encodeURIComponent(
-      "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+    action: `https://wa.me/5511971423779?text=${encodeURIComponent(
+      "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
     )}`,
     color: "from-[#10b981] to-[#059669]",
   },
@@ -30,7 +30,7 @@ const contactMethods = [
     action: "mailto:contato@moocaredes.com.br",
     color: "from-[#8b5cf6] to-[#7c3aed]",
   },
-]
+];
 
 const serviceAreas = [
   "São Paulo Capital",
@@ -41,7 +41,7 @@ const serviceAreas = [
   "Mauá",
   "Ribeirão Pires",
   "Rio Grande da Serra",
-]
+];
 
 export default function ContactSection() {
   return (
@@ -56,7 +56,8 @@ export default function ContactSection() {
             Entre em Contato
           </h2>
           <p className="text-xl text-[#d1d5db] max-w-3xl mx-auto">
-            Estamos prontos para atender você e garantir a segurança da sua família
+            Estamos prontos para atender você e garantir a segurança da sua
+            família
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -67,14 +68,14 @@ export default function ContactSection() {
                   <button
                     key={index}
                     onClick={(e) => {
-                      e.preventDefault()
+                      e.preventDefault();
                       window.open(
-                        `https://wa.me/5511963403041?text=${encodeURIComponent(
-                          "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                        `https://wa.me/5511971423779?text=${encodeURIComponent(
+                          "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
                         )}`,
-                        "_blank",
-                      )
-                      window.location.href = "/enviar_mensagem"
+                        "_blank"
+                      );
+                      window.location.href = "/enviar_mensagem";
                     }}
                     className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 w-full text-left"
                   >
@@ -83,9 +84,15 @@ export default function ContactSection() {
                         <MessageCircle className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white">WhatsApp</h3>
-                        <p className="text-[#C4A484] font-semibold">(11) 96340-3041</p>
-                        <p className="text-[#d1d5db] text-sm">Resposta imediata</p>
+                        <h3 className="text-xl font-bold text-white">
+                          WhatsApp
+                        </h3>
+                        <p className="text-[#C4A484] font-semibold">
+                          (11) 97142-3779
+                        </p>
+                        <p className="text-[#d1d5db] text-sm">
+                          Resposta imediata
+                        </p>
                       </div>
                     </div>
                   </button>
@@ -103,13 +110,19 @@ export default function ContactSection() {
                         <method.icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white">{method.title}</h3>
-                        <p className="text-[#C4A484] font-semibold">{method.info}</p>
-                        <p className="text-[#d1d5db] text-sm">{method.description}</p>
+                        <h3 className="text-xl font-bold text-white">
+                          {method.title}
+                        </h3>
+                        <p className="text-[#C4A484] font-semibold">
+                          {method.info}
+                        </p>
+                        <p className="text-[#d1d5db] text-sm">
+                          {method.description}
+                        </p>
                       </div>
                     </div>
                   </a>
-                ),
+                )
               )}
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
@@ -141,14 +154,14 @@ export default function ContactSection() {
               <div className="text-center">
                 <button
                   onClick={(e) => {
-                    e.preventDefault()
+                    e.preventDefault();
                     window.open(
-                      `https://wa.me/5511963403041?text=${encodeURIComponent(
-                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação",
+                      `https://wa.me/5511971423779?text=${encodeURIComponent(
+                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
                       )}`,
-                      "_blank",
-                    )
-                    window.location.href = "/enviar_mensagem"
+                      "_blank"
+                    );
+                    window.location.href = "/enviar_mensagem";
                   }}
                   className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 lg:h-14 lg:w-auto lg:text-lg min-w-[280px]"
                 >
@@ -157,7 +170,9 @@ export default function ContactSection() {
               </div>
             </div>
             <div className="bg-gradient-to-r from-[#C4A484]/20 to-[#C4A484]/10 rounded-2xl p-8 border border-[#C4A484]/30">
-              <h3 className="text-2xl font-bold mb-4 text-center">Orçamento Gratuito</h3>
+              <h3 className="text-2xl font-bold mb-4 text-center">
+                Orçamento Gratuito
+              </h3>
               <ul className="space-y-3 text-[#d1d5db]">
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-[#C4A484] rounded-full mr-3"></div>
@@ -198,5 +213,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import ComparisonSection from "@/components/comparison-section";
 import ContactSection from "@/components/contact-section";
 import FAQSection from "@/components/faq-section";
+import ComparisonSection from "@/components/featured/comparison-section";
 import InteractiveGallery from "@/components/gallery/interactive-gallery";
 import HeroCarousel from "@/components/hero-carousel";
 import ModernHeader from "@/components/modern-header";

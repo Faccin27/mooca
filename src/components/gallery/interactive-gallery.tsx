@@ -1,61 +1,39 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
-
-const categories = [
-  { id: "all", name: "Todos", count: 8 },
-  { id: "janelas", name: "Janelas", count: 4 },
-  { id: "sacadas", name: "Sacadas", count: 3 },
-  { id: "externo", name: "Externo", count: 1 }, // Changed from "pets" to "externo"
-]
-
-const projects = [
-  { id: 1, image: "/images/janela.png", category: "janelas", title: "Proteção para Janela", location: "Mooca - SP" },
-  { id: 2, image: "/images/sacada.png", category: "sacadas", title: "Rede para Sacada", location: "Tatuapé - SP" },
-  {
-    id: 3,
-    image: "/images/gato.png",
-    category: "externo",
-    title: "Proteção para Área Externa",
-    location: "Vila Madalena - SP",
-  }, 
-  { id: 4, image: "/images/janela2.png", category: "janelas", title: "Janela Residencial", location: "Perdizes - SP" },
-  { id: 5, image: "/images/sacada2.png", category: "sacadas", title: "Sacada com Vista", location: "Morumbi - SP" },
-  { id: 6, image: "/images/varanda.png", category: "sacadas", title: "Varanda Gourmet", location: "Itaim Bibi - SP" },
-  { id: 7, image: "/images/quarto.png", category: "janelas", title: "Quarto Infantil", location: "Vila Alpina - SP" },
-  {
-    id: 8,
-    image: "/images/teste.png",
-    category: "janelas",
-    title: "Segurança na sua Janela",
-    location: "Santo André - SP",
-  },
-]
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import { categories, projects } from "./listGallery";
 
 export default function InteractiveGallery() {
-  const [activeCategory, setActiveCategory] = useState("all")
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const filteredProjects =
-    activeCategory === "all" ? projects : projects.filter((project) => project.category === activeCategory)
+    activeCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   const nextImage = () => {
     if (selectedImage !== null) {
-      const currentIndex = filteredProjects.findIndex((p) => p.id === selectedImage)
-      const nextIndex = (currentIndex + 1) % filteredProjects.length
-      setSelectedImage(filteredProjects[nextIndex].id)
+      const currentIndex = filteredProjects.findIndex(
+        (p) => p.id === selectedImage
+      );
+      const nextIndex = (currentIndex + 1) % filteredProjects.length;
+      setSelectedImage(filteredProjects[nextIndex].id);
     }
-  }
+  };
 
   const prevImage = () => {
     if (selectedImage !== null) {
-      const currentIndex = filteredProjects.findIndex((p) => p.id === selectedImage)
-      const prevIndex = (currentIndex - 1 + filteredProjects.length) % filteredProjects.length
-      setSelectedImage(filteredProjects[prevIndex].id)
+      const currentIndex = filteredProjects.findIndex(
+        (p) => p.id === selectedImage
+      );
+      const prevIndex =
+        (currentIndex - 1 + filteredProjects.length) % filteredProjects.length;
+      setSelectedImage(filteredProjects[prevIndex].id);
     }
-  }
+  };
 
   return (
     <section className="py-24 bg-white" id="projetos">
@@ -65,7 +43,8 @@ export default function InteractiveGallery() {
             Nossos Projetos
           </h2>
           <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
-            Veja alguns dos nossos trabalhos realizados com excelência em toda região de São Paulo
+            Veja alguns dos nossos trabalhos realizados com excelência em toda
+            região de São Paulo
           </p>
         </div>
 
@@ -102,7 +81,6 @@ export default function InteractiveGallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                   <h3 className="font-bold text-lg">{project.title}</h3>
-                  <p className="text-sm text-[#d1d5db]">{project.location}</p>
                 </div>
               </div>
             </div>
@@ -135,7 +113,10 @@ export default function InteractiveGallery() {
             <div className="relative max-w-4xl max-h-[80vh]">
               {filteredProjects.find((p) => p.id === selectedImage) && (
                 <Image
-                  src={filteredProjects.find((p) => p.id === selectedImage)!.image || "/placeholder.svg"}
+                  src={
+                    filteredProjects.find((p) => p.id === selectedImage)!
+                      .image || "/placeholder.svg"
+                  }
                   alt="Project"
                   width={800}
                   height={600}
@@ -147,5 +128,5 @@ export default function InteractiveGallery() {
         )}
       </div>
     </section>
-  )
+  );
 }

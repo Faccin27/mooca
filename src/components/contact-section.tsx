@@ -33,14 +33,21 @@ const contactMethods = [
 ];
 
 const serviceAreas = [
-  "São Paulo Capital",
   "Santo André",
-  "São Bernardo do Campo",
-  "São Caetano do Sul",
   "Diadema",
+  "São Bernardo do Campo",
+  "São Caetano",
+  "Vila Alpina",
+  "Vila Prudente",
+  "Tatuapé",
+  "Perdizes",
+  "Vila Madalena",
+  "Morumbi",
+  "Itaim Bibi",
+  "Lapa",
+  "Mooca",
+  "Região Central",
   "Mauá",
-  "Ribeirão Pires",
-  "Rio Grande da Serra",
 ];
 
 export default function ContactSection() {
@@ -143,7 +150,7 @@ export default function ContactSection() {
                 <MapPin className="w-6 h-6 text-[#C4A484] mr-3" />
                 <h3 className="text-2xl font-bold">Áreas de Atendimento</h3>
               </div>
-              <div className="grid grid-cols-2 gap-3 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
                 {serviceAreas.map((area, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-[#C4A484] rounded-full mr-3"></div>

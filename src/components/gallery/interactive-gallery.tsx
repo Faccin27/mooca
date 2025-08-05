@@ -6,7 +6,7 @@ import { useState } from "react";
 import { categories, projects } from "./listGallery";
 
 export default function InteractiveGallery() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("janelas");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const filteredProjects =

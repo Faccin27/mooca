@@ -119,7 +119,7 @@ export default function FAQSection() {
                 );
                 window.location.href = "/enviar_mensagem";
               }}
-              className="btn-whatsapp inline-block transform hover:scale-105 transition-all duration-300"
+              className="btn-whatsapp  inline-block transform hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               Fale Conosco no WhatsApp
             </button>

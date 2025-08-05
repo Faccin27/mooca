@@ -126,7 +126,7 @@ export default function HeroCarousel() {
                     );
                     window.location.href = "/enviar_mensagem";
                   }}
-                  className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg"
+                  className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg cursor-pointer"
                 >
                   Solicitar orçamento
                 </button>

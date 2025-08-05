@@ -146,7 +146,7 @@ export default function ModernHeader() {
                 );
                 window.location.href = "/enviar_mensagem";
               }}
-              className="btn-whatsapp text-white"
+              className="btn-whatsapp text-white cursor-pointer"
             >
               Orçamento Grátis
             </button>
@@ -209,7 +209,7 @@ export default function ModernHeader() {
                     );
                     window.location.href = "/enviar_mensagem";
                   }}
-                  className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="bg-gradient-to-r cursor-pointer from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   Orçamento Grátis
                 </button>

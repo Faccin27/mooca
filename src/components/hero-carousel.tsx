@@ -81,7 +81,7 @@ export default function HeroCarousel() {
       <div className="relative z-10 h-full flex items-center pt-24">
         {" "}
         {/* Added pt-24 here */}
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto sm:mx-[118px] px-4">
           <div className="max-w-4xl">
             <div className="mb-8">
               <h1

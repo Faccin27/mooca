@@ -84,10 +84,7 @@ export default function HeroCarousel() {
         <div className="container mx-auto sm:mx-[118px] px-4">
           <div className="max-w-4xl">
             <div className="mb-8">
-              <h1
-                className="text-4xl md:text-6xl mb-6 font-bold text-white leading-tight"
-                style={{ lineHeight: "60px" }}
-              >
+              <h1 className="text-4xl md:text-6xl mb-6 font-bold text-white leading-tight">
                 {/* Adjusted md:text-6xl */}
                 <span className="text-white">
                   {heroSlides[currentSlide].title}

@@ -128,7 +128,7 @@ export default function HeroCarousel() {
                   }}
                   className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg cursor-pointer"
                 >
-                  Solicitar orçamento
+                  Cotação A Partir de R$45/m²
                 </button>
               </div>
             </div>

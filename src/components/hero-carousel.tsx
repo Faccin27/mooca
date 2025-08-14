@@ -125,7 +125,7 @@ export default function HeroCarousel() {
                   }}
                   className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg cursor-pointer"
                 >
-                  Cotação A Partir de R$45/m²
+                  Cotação Rápida por WhatsApp
                 </button>
               </div>
             </div>

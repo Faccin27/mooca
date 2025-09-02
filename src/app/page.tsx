@@ -2,7 +2,7 @@ import ContactSection from "@/components/contact-section";
 import FAQSection from "@/components/faq-section";
 import ComparisonSection from "@/components/featured/comparison-section";
 import InteractiveGallery from "@/components/gallery/interactive-gallery";
-import HeroCarousel from "@/components/hero-carousel";
+import HeroSection from "@/components/hero-section";
 import ModernHeader from "@/components/modern-header";
 import ProcessSection from "@/components/process-section";
 import TestimonialsSection from "@/components/testimonials-section";
@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <ModernHeader />
       <main className="flex-grow">
-        <HeroCarousel />
+        <HeroSection />
         <ProcessSection />
         <InteractiveGallery />
         <TestimonialsSection />

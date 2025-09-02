@@ -1,18 +1,18 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import Script from "next/script"
-import "./globals.css"
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import type React from "react";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-})
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "Mooca Redes - Redes de Proteção em São Paulo | Instalação 24h",
@@ -95,18 +95,19 @@ export const metadata: Metadata = {
     "business:contact_data:region": "SP",
     "business:contact_data:postal_code": "03101",
     "business:contact_data:country_name": "Brasil",
-    "business:contact_data:phone_number": "+5511963403041",
+    "business:contact_data:phone_number": "+5511971423779",
     "business:contact_data:website": "https://www.moocaredes.com.br",
   },
-}
+};
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Mooca Redes",
-  description: "Empresa especializada em redes de proteção para janelas, sacadas e pets em São Paulo e ABC Paulista",
+  description:
+    "Empresa especializada em redes de proteção para janelas, sacadas e pets em São Paulo e ABC Paulista",
   url: "https://www.moocaredes.com.br/",
-  telephone: "+5511963403041",
+  telephone: "+5511971423779",
   address: {
     "@type": "PostalAddress",
     addressLocality: "São Paulo",
@@ -141,7 +142,7 @@ const structuredData = {
   priceRange: "$$",
   image: "https://www.moocaredes.com.br/images/logo.png",
   logo: "https://www.moocaredes.com.br/images/logo.png",
-  sameAs: ["https://wa.me/5511963403041"],
+  sameAs: ["https://wa.me/5511971423779"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Serviços de Redes de Proteção",
@@ -151,7 +152,8 @@ const structuredData = {
         itemOffered: {
           "@type": "Service",
           name: "Redes de Proteção para Janelas",
-          description: "Instalação de redes de proteção certificadas para janelas residenciais",
+          description:
+            "Instalação de redes de proteção certificadas para janelas residenciais",
         },
       },
       {
@@ -184,7 +186,8 @@ const structuredData = {
         "@type": "Person",
         name: "Maria Silva",
       },
-      reviewBody: "Excelente serviço! A instalação foi rápida e o resultado ficou perfeito.",
+      reviewBody:
+        "Excelente serviço! A instalação foi rápida e o resultado ficou perfeito.",
     },
   ],
   aggregateRating: {
@@ -194,12 +197,12 @@ const structuredData = {
     bestRating: "5",
     worstRating: "5",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="pt-BR">
@@ -217,7 +220,11 @@ export default function RootLayout({
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://static.hotjar.com" />
 
@@ -245,11 +252,16 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
 
         {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-TBXM61GVP9" strategy="afterInteractive" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TBXM61GVP9"
+          strategy="afterInteractive"
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -260,5 +272,5 @@ export default function RootLayout({
         </Script>
       </body>
     </html>
-  )
+  );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import type { HeroSlide } from "@/types";
+import { scrollToForm } from "@/utils/scrollToForm";
 import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -172,6 +173,15 @@ export default function HeroCarousel() {
           </div>
         </div>
       </div>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToForm();
+        }}
+        className="btn-whatsapp lg:h-14 lg:w-auto lg:text-lg cursor-pointer"
+      >
+        Solicitar Orçamento Gratuito
+      </button>
     </section>
   );
 }

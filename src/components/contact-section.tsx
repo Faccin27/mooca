@@ -2,6 +2,7 @@
 
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
+import ContactForm from "./contact-form";
 
 const contactMethods = [
   {
@@ -143,40 +144,7 @@ export default function ContactSection() {
                 <p>Domingo: Plantão WhatsApp</p>
               </div>
             </div>
-          </div>
-          <div className="space-y-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <div className="flex items-center mb-6">
-                <MapPin className="w-6 h-6 text-[#C4A484] mr-3" />
-                <h3 className="text-2xl font-bold">Áreas de Atendimento</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
-                {serviceAreas.map((area, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="w-2 h-2 bg-[#C4A484] rounded-full mr-3"></div>
-                    <span className="text-[#d1d5db]">{area}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="text-center">
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(
-                      `https://wa.me/5511971423779?text=${encodeURIComponent(
-                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
-                      )}`,
-                      "_blank"
-                    );
-                    window.location.href = "/enviar_mensagem";
-                  }}
-                  className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 lg:h-14 lg:w-auto lg:text-lg min-w-[280px]"
-                >
-                  Solicitar Orçamento Gratuito
-                </button>
-              </div>
-            </div>
-            <div className="bg-gradient-to-r from-[#C4A484]/20 to-[#C4A484]/10 rounded-2xl p-8 border border-[#C4A484]/30">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <h3 className="text-2xl font-bold mb-4 text-center">
                 Orçamento Gratuito
               </h3>
@@ -199,6 +167,25 @@ export default function ContactSection() {
                 </li>
               </ul>
             </div>
+          </div>
+          <div className="space-y-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div className="flex items-center mb-6">
+                <MapPin className="w-6 h-6 text-[#C4A484] mr-3" />
+                <h3 className="text-2xl font-bold">Áreas de Atendimento</h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
+                {serviceAreas.map((area, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-[#C4A484] rounded-full mr-3"></div>
+                    <span className="text-[#d1d5db]">{area}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center"></div>
+            </div>
+
+            <ContactForm />
           </div>
         </div>
 

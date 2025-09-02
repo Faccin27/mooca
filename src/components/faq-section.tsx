@@ -2,6 +2,7 @@
 
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { scrollToForm } from "@/utils/scrollToForm";
 
 const faqs = [
   {
@@ -111,17 +112,11 @@ export default function FAQSection() {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                window.open(
-                  `https://wa.me/5511971423779?text=${encodeURIComponent(
-                    "Tenho uma dúvida sobre redes de proteção"
-                  )}`,
-                  "_blank"
-                );
-                window.location.href = "/enviar_mensagem";
+                scrollToForm();
               }}
-              className="btn-whatsapp  inline-block transform hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="btn-whatsapp inline-block transform hover:scale-105 transition-all duration-300 cursor-pointer"
             >
-              Fale Conosco no WhatsApp
+              Solicitar Orçamento
             </button>
           </div>
         </div>

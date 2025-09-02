@@ -2,6 +2,7 @@
 import type React from "react";
 import { useEffect, useState } from "react";
 
+import { scrollToForm } from "@/utils/scrollToForm";
 import { Clock, MapPin, Menu, Phone, Shield, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,6 +37,14 @@ export default function ModernHeader() {
     href: string
   ) => {
     e.preventDefault();
+    
+    // Se for o link "Início", fazer scroll para o topo
+    if (href === "#inicio") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setIsMenuOpen(false);
+      return;
+    }
+    
     const targetId = href.substring(1); // Remove the '#'
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
@@ -133,18 +142,12 @@ export default function ModernHeader() {
             </Link>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button - Desktop */}
           <div className="hidden md:block">
             <button
               onClick={(e) => {
                 e.preventDefault();
-                window.open(
-                  `https://wa.me/5511971423779?text=${encodeURIComponent(
-                    "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
-                  )}`,
-                  "_blank"
-                );
-                window.location.href = "/enviar_mensagem";
+                scrollToForm();
               }}
               className="btn-whatsapp text-white cursor-pointer"
             >
@@ -155,7 +158,7 @@ export default function ModernHeader() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors ml-2"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-gray-700" />
@@ -168,6 +171,21 @@ export default function ModernHeader() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-100">
+            {/* Phone Number Highlight at Top of Menu */}
+            <div className="mb-4 p-4 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg border border-primary/20">
+              <div className="text-center">
+                <p className="text-sm text-gray-600 mb-2">Ligue agora mesmo:</p>
+                <a
+                  href="tel:+5511971423779"
+                  className="flex items-center justify-center text-primary font-bold text-lg hover:text-primary/80 transition-colors"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  (11) 97142-3779
+                </a>
+                <p className="text-xs text-gray-500 mt-1">Atendimento 24h</p>
+              </div>
+            </div>
+
             <nav className="flex flex-col space-y-4">
               <Link
                 href="#inicio"
@@ -201,27 +219,12 @@ export default function ModernHeader() {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    window.open(
-                      `https://wa.me/5511971423779?text=${encodeURIComponent(
-                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
-                      )}`,
-                      "_blank"
-                    );
-                    window.location.href = "/enviar_mensagem";
+                    scrollToForm();
                   }}
                   className="bg-gradient-to-r cursor-pointer from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   Orçamento Grátis
                 </button>
-              </div>
-              <div className="flex items-center justify-center pt-2">
-                <a
-                  href="tel:+5511971423779"
-                  className="flex items-center text-primary font-semibold"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  (11) 97142-3779
-                </a>
               </div>
             </nav>
           </div>

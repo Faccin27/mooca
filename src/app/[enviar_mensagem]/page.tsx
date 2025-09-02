@@ -4,11 +4,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-xl p-8 text-center">
-        <h1 className="text-4xl font-bold mb-4 text-primary">
-          Obrigado pelo contato!
-        </h1>
+        <h1 className="text-4xl font-bold mb-4 text-primary">Quase lá!</h1>
         <p className="text-xl mb-6 text-gray-600">
-          Recebemos sua mensagem e entraremos em contato em breve.
+          Por favor, envie a mensagem no WhatsApp para que possamos atender sua
+          solicitação
         </p>
         <div className="mb-8">
           <Link

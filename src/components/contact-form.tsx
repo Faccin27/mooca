@@ -284,7 +284,7 @@ export default function ContactForm() {
           ) : (
             <>
               <Send className="w-5 h-5" />
-              <span>Enviar via WhatsApp</span>
+              <span>Solicitar Cotação</span>
             </>
           )}
         </button>

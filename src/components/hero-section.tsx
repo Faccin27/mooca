@@ -63,20 +63,33 @@ export default function HeroSection() {
                   Solicitar Orçamento Gratuito
                 </button>
               </div>
+
+              {/* Selo INMETRO */}
+              <div className="mt-6 flex justify-start">
+                <div className="relative">
+                  <Image
+                    src="/images/selo.jpg"
+                    alt="Selo INMETRO - Material Certificado"
+                    width={120}
+                    height={80}
+                    className="opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 right-1/2 text-white/70 animate-bounce">
+      {/* <div className="absolute bottom-8 right-1/2 text-white/70 animate-bounce">
         <div className="flex flex-col items-center">
           <span className="text-sm mb-2">Role para baixo</span>
           <div className="w-6 h-10 border-2 border-white/30 rounded-lg flex justify-center">
             <div className="w-1 h-3 bg-white/50 rounded-lg mt-2 animate-pulse"></div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

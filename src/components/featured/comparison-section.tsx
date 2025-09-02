@@ -11,6 +11,8 @@ import {
   Users,
 } from "lucide-react";
 
+import { scrollToForm } from "@/utils/scrollToForm";
+
 const features = [true, true, true, true, true, true, true];
 
 export default function ComparisonSection() {
@@ -72,14 +74,9 @@ export default function ComparisonSection() {
 
                 {/* Botão de ação principal */}
                 <button
-                  onClick={() => {
-                    window.open(
-                      `https://wa.me/5511971423779?text=${encodeURIComponent(
-                        "Encontrei você pelo site e estou entrando em contato para solicitar uma cotação"
-                      )}`,
-                      "_blank"
-                    );
-                    window.location.href = "/enviar_mensagem";
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToForm();
                   }}
                   className="w-full inline-flex items-center justify-center gap-3 font-bold px-8 py-4 rounded-2xl bg-[#C4A484] text-[#552020] hover:bg-[#C4A484]/90 shadow-lg hover:shadow-xl hover:scale-95 transition-all duration-300 group cursor-pointer"
                 >
